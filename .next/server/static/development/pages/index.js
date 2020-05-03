@@ -108,15 +108,61 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/killerrabbit/Sites/covid-19SA/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-function IndexPage() {
-  return __jsx("p", {
+
+
+function useStats() {
+  const {
+    0: stats,
+    1: setStats
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    async function fetchData() {
+      console.log('Fetch Data');
+      const data = await fetch('https://disease.sh/v2/countries/South%20Africa?yesterday=true&strict=truel').then(res => res.json());
+      setStats(data);
+    }
+
+    fetchData();
+  }, []);
+  return stats;
+}
+
+function Stats() {
+  const stats = useStats();
+  console.log(stats);
+  return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 2,
+      lineNumber: 22,
+      columnNumber: 8
+    }
+  }, __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
       columnNumber: 12
     }
-  }, "Hey it is done");
+  }, "STats"));
+}
+
+function IndexPage() {
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 9
+    }
+  }, __jsx(Stats, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 13
+    }
+  }));
 }
 
 /***/ }),
