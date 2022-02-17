@@ -9,7 +9,7 @@
   "author": "Evert Smit - Urban Fox Marketing",
   "license": "ISC",
   "dependencies": {
-    "next": "^11.1.3",
+    "next": "^12.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.0.1"
